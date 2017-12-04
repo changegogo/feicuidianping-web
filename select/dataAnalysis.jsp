@@ -68,6 +68,14 @@
 					</li>
 					<li><a class="active-menu" href=" dataAnalysis.jsp"><i
 							class="fa fa-bar-chart-o"></i>数据分析</a></li>
+	
+					<%
+						if (username.equals("admin") || username.equals("jxgl")) {
+					%>
+					<li><a href="dataStatistics.jsp"><i class="fa fa-key"></i>数据统计</a></li>
+					<%
+						}
+					%>
 				</ul>
 			</div>
 

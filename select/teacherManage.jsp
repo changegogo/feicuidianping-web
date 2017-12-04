@@ -13,7 +13,7 @@
 <link href="css/bootstrap-table.min.css" rel="stylesheet" />
 <link href="css/font-awesome.css" rel="stylesheet" />
 </head>
-<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-43" data-genuitec-path="/SearchServer/WebRoot/select/teacherManage.jsp">
+<body>
 	<%
 		HttpSession s = request.getSession();
 		String username = (String) s.getAttribute("username");
@@ -25,7 +25,7 @@
 		data-genuitec-file-id="wc1-50"
 		data-genuitec-path="/SearchServer/WebRoot/select/teacherManage.jsp"
 		data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-50"
-		data-genuitec-path="/SearchServer/WebRoot/select/teacherManage.jsp" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-43" data-genuitec-path="/SearchServer/WebRoot/select/teacherManage.jsp">
+		data-genuitec-path="/SearchServer/WebRoot/select/teacherManage.jsp">
 		<nav class="navbar  navbar-cls-top " role="navigation"
 			style="margin-bottom: 0">
 			<div class="navbar-header">
@@ -52,6 +52,13 @@
 							class="fa fa-edit "></i>老师管理</a></li>
 					<li><a href=" dataAnalysis.jsp"><i
 							class="fa fa-bar-chart-o"></i>数据分析</a></li>
+					<%
+						if (username.equals("admin") || username.equals("jxgl")) {
+					%>
+					<li><a href="dataStatistics.jsp"><i class="fa fa-key"></i>数据统计</a></li>
+					<%
+						}
+					%>
 				</ul>
 			</div>
 
@@ -242,7 +249,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- 编辑的模态框---------start -->
 	<div class="modal fade" id="myEditModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">

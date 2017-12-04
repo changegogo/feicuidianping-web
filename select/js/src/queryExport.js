@@ -185,7 +185,7 @@
 						return;
 					} else {
 						//location.href = "/SearchServer/xlsx/" + data;
-						location.href = 'http://120.77.180.125:8081/WebRoot/xlsx/' + data;
+						location.href = 'http://tp.feicuiedu.com:8081/WebRoot/xlsx/' + data;
 					}
 				},
 				error : function(err) {

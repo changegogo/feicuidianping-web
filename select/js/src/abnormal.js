@@ -1,4 +1,4 @@
-﻿$(function() {
+$(function() {
 	/**页面进来之后的三个下拉框大区+校区+专业，从数据库拿来数据复制给大区**/
 	var GLOBAL = GLOBAL || {};
 	//预置字符串
@@ -106,7 +106,7 @@
 				return;
 			}
 		}
-		
+
 		/**日期为空的校验**/
 		var startDate = $("#startDate").val();
 		var endtDate = $("#endDate").val();
@@ -175,7 +175,7 @@
 		buttonsAlign : "left", //按钮对齐方式
 		columns : [ {
 			field : 'largeAreaName',
-			width : 100,
+			width : '100px',
 			align : 'center',
 			valign : 'middle',
 			title : "大区"
@@ -216,7 +216,18 @@
 			valign : 'middle',
 			title : "微信昵称",
 			formatter : function(value, row, index) {
-				return "<div style='width:100px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;' title=" + value + ">" + value + "</div>";
+				return "<div style='white-space: nowrap;text-overflow: ellipsis;overflow: hidden;' title=" + value + ">" + value + "</div>";
+			}
+		}, {
+			field : 'userImg',
+			title : '异常头像',
+			width : '100',
+			align : 'center',
+			valign : 'middle',
+			formatter : function(value, row, index) {
+				return "<img style='display:inline-block; width:50px;' src=" + value + " />"
+				//return value;
+				//return "<div title=" + value + ">" + value + "</div>";
 			}
 		}, {
 			field : 'average',
@@ -231,7 +242,7 @@
 			align : 'center',
 			valign : 'middle',
 			formatter : function(value, row, index) {
-				return "<div style='width:100px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;' title=" + value + ">" + value + "</div>";
+				return "<div style='white-space: nowrap;text-overflow: ellipsis;overflow: hidden;' title=" + value + ">" + value + "</div>";
 			}
 		}, {
 			field : 'fillDate',

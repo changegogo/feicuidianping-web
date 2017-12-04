@@ -12,8 +12,13 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrap-table.min.css" />
 <link href="css/font-awesome.css" rel="stylesheet" />
+<style type="text/css">
+.table {
+	table-layout: fixed;
+}
+</style>
 </head>
-<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-15" data-genuitec-path="/SearchServer/WebRoot/select/abnormal.jsp">
+<body>
 	<%
 		HttpSession s = request.getSession();
 		String username = (String) s.getAttribute("username");
@@ -21,7 +26,11 @@
 		System.out.println("username1:" + username + ",password1:" + password);
 		if (username != null && password != null) {
 	%>
-	<div id="wrapper" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-52" data-genuitec-path="/SearchServer/WebRoot/select/abnormal.jsp" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-52" data-genuitec-path="/SearchServer/WebRoot/select/abnormal.jsp" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-15" data-genuitec-path="/SearchServer/WebRoot/select/abnormal.jsp">
+	<div id="wrapper" data-genuitec-lp-enabled="false"
+		data-genuitec-file-id="wc1-52"
+		data-genuitec-path="/SearchServer/WebRoot/select/abnormal.jsp"
+		data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-52"
+		data-genuitec-path="/SearchServer/WebRoot/select/abnormal.jsp">
 		<nav class="navbar  navbar-cls-top " role="navigation"
 			style="margin-bottom: 0">
 			<div class="navbar-header">
@@ -48,6 +57,13 @@
 					</li>
 					<li><a href=" dataAnalysis.jsp"><i
 							class="fa fa-bar-chart-o"></i>数据分析</a></li>
+					<%
+						if (username.equals("admin") || username.equals("jxgl")) {
+					%>
+					<li><a href="dataStatistics.jsp"><i class="fa fa-key"></i>数据统计</a></li>
+					<%
+						}
+					%>
 				</ul>
 			</div>
 
@@ -127,7 +143,7 @@
 						</div>
 					</div>
 					<div class="tableStyle">
-						<table id="tb_departments"></table>
+						<table id="tb_departments" class="table"></table>
 					</div>
 
 					<!--<div class="portlet-body">
